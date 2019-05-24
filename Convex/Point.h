@@ -12,7 +12,6 @@ struct Point {
 	int left_right(Point& M, Point& E);
 	double angle_cos(Point& P);
 	double length(Point& P);
-	void write();
 };
 
 #endif

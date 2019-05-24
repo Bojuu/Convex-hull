@@ -38,7 +38,3 @@ double Point::angle_cos(Point& P) {	// cosinus calculation
 double Point::length(Point& P) {		// distance between the points
 	return sqrt(pow(x - P.x, 2) + pow(y - P.y, 2));
 }
-
-void Point::write() {
-	std::cout << x << " " << y << std::endl;
-}
