@@ -9,9 +9,6 @@ Point::Point(double x, double y) {
 	this->y = y;
 }
 
-double Point::get_x() { return x; }
-double Point::get_y() { return y; }
-
 bool Point::same(Point& P) {
 	return (x == P.x && y == P.y);
 }

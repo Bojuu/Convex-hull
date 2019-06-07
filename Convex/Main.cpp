@@ -7,7 +7,7 @@
 void write(std::vector<Point>& vec) {
 	std::cout << "Points of the convex hull (in order): " << std::endl;
 	for (Point p : vec) {
-		std::cout << p.get_x() << " " << p.get_y() << std::endl;
+		std::cout << p.x << " " << p.y << std::endl;
 	}
 }
 

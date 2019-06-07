@@ -22,17 +22,17 @@ namespace {
 
 	void base_choose(std::vector<Point>& data) {	// choosing the base point (the one with the lowest y coord)
 
-		double min_y = data[0].get_y();
+		double min_y = data[0].y;
 		int index = 0;
 
 		for (unsigned int i = 1; i < data.size(); i++) {
-			double temp_y = data[i].get_y();
+			double temp_y = data[i].y;
 			if (temp_y < min_y) {
 				min_y = temp_y;
 				index = i;
 			}
 			else if (temp_y == min_y) {		// equal y -> lower x
-				if (data[i].get_x() < data[index].get_x()) {
+				if (data[i].x < data[index].y) {
 					index = i;
 				}
 			}
@@ -63,9 +63,13 @@ void Alg::make_hull(const std::vector<Point>& data, std::vector<Point>& hull) {
 
 	base_choose(hull);
 
-	for (unsigned int i = 1; i < hull.size(); i++) {
-		if (hull[0].same(hull[i])) {
-			hull.erase(hull.begin() + i);
+	std::vector<Point>::iterator it;	// if there are more base points -> erase
+	for (it = hull.begin()+1; it != hull.end(); ) {
+		if (hull[0].same(*it)) {
+			it = hull.erase(it);
+		}
+		else {
+			it++;
 		}
 	}
 
