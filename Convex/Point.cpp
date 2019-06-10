@@ -4,10 +4,7 @@
 
 #include "Point.h"
 
-Point::Point(double x, double y) {
-	this->x = x;
-	this->y = y;
-}
+Point::Point(double x, double y) : x(x), y(y) {}
 
 bool Point::same(Point& P) {
 	return (x == P.x && y == P.y);
